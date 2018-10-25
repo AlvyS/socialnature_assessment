@@ -1,0 +1,79 @@
+<div class="container" (window:resize)="onResize($event)">
+  <div class="row banner-row">
+    <div class="splash">
+      <h2 class="splash__header">Yay! You get to #trynatural with MyChelle Sunscreen Stick</h2>
+      <span class="splash__text"> Your item will be shipping mid-June.</span>
+    </div>
+    <div class="share">
+      <div class="share__header">Do you have any friends who might want this?</div>
+      <ng-container *ngIf="currentWindowWidth > 768; else smallScreen">
+        <button class="btn btn--fb">
+            <i class="fab fa-facebook-square"></i>
+            Share
+          </button>
+          <button class="btn btn--twitter">
+            <i class="fab fa-twitter"></i>
+            Tweet
+          </button>
+          <button class="btn btn--pinterest">
+            <i class="fab fa-pinterest-p"></i>
+            Pin It
+          </button>
+          <button class="btn btn--email">
+            <i class="fas fa-envelope"></i>
+            E-mail
+          </button>
+      </ng-container>
+
+      <ng-template #smallScreen>
+        <div class="btn-row">
+          <button class="btn btn--fb">
+            <i class="fab fa-facebook-square"></i>
+            Share
+          </button>
+          <button class="btn btn--twitter">
+            <i class="fab fa-twitter"></i>
+            Tweet
+          </button>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--pinterest">
+            <i class="fab fa-pinterest-p"></i>
+            Pin It
+          </button>
+          <button class="btn btn--email">
+            <i class="fas fa-envelope"></i>
+            E-mail
+          </button>
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+  <div class="row suggested-row">
+    <div class="suggested">
+      <div class="suggested__header">
+        <h2>Want to get more natural products?</h2>
+        <div>Good News! You pre-qualify for these natural products:</div>
+      </div>
+      <div class="product__list">
+        <div class="row">
+          <!-- TODO: Componentize each product into its own 'app-product-card' and loop it -->
+          <ng-container *ngFor="let product of products">
+            <div class="col-12 col-md-6 col-lg-4">
+              <mat-card class="product__item">
+                <img mat-card-image src="{{ product.imageUrl }}">
+                <mat-divider [inset]="true"></mat-divider>
+                <mat-card-content>
+                  <h5>{{ product.name }}</h5>
+                  <span>{{ product.manufacturer }}</span>
+                  <button class="btn btn-default">WANT IT</button>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

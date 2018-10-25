@@ -1,0 +1,112 @@
+@import '../../shared/styles/base.scss';
+
+:host {
+  display: block;
+  margin-top: 64px;
+}
+
+.splash {
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  background-image: url("/assets/banner-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% 90%;
+  &__header {
+    color: $teal-primary;
+    padding-top: 10rem;
+  }
+}
+
+.share {
+  width: 100%;
+  background: $light-gray;
+  text-align: center;
+  padding: 1.5rem;
+  &__header {
+    padding-bottom: 1rem;
+  }
+  .btn {
+    width: 6rem;
+    margin-right: 1rem;
+    border: 1px solid darkgray;
+    &:last-of-type {
+      margin: 0;
+    }
+    &--fb {
+      background: $fb-blue;
+      color: white;
+    }
+    &--twitter {
+      background: $light-gray;
+      i {
+        color: $twitter-blue;
+      }
+    }
+    &--pinterest {
+      background: $light-gray;
+      color: $pinterest-red;
+    }
+    &--email {
+      background: $light-gray;
+      i {
+        color: red;
+      }
+    }
+  }
+}
+
+.suggested {
+  width: 100%;
+  padding: 2rem 0;
+  position: relative;
+  border-bottom: 1px solid $light-gray;
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    box-shadow: inset 0px 1px 0px 0px $light-gray;
+  }
+  &__header {
+    text-align: center;
+  }
+}
+
+.product {
+  &__list {
+    padding: 2rem 0;
+  }
+  &__item {
+    .mat-card-content {
+      padding: .5rem 0 0 0;
+      h5 {
+        color: $teal-primary;
+      }
+      .btn {
+        position: absolute;
+        right: 1rem;
+        bottom: 1.2rem;
+        border-color: $red;
+        color: $red;
+        &:hover {
+          background: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .btn-row {
+    padding-bottom: 1rem;
+  }
+  .product {
+    &__item {
+      margin-top: 1rem;
+    }
+  }
+}
