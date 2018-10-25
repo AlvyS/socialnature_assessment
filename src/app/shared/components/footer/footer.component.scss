@@ -24,10 +24,18 @@
   }
 }
 
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: $screen-sm) {
   .footer {
     &__title {
       padding-top: 1rem;
+    }
+    &__group {
+      padding: 0;
     }
     ul li {
       font-size: 1rem;

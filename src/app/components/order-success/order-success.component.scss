@@ -6,10 +6,11 @@
 }
 
 .splash {
+  position: relative;
   width: 100%;
   min-height: 400px;
   text-align: center;
-  background-image: url("/assets/banner-bg.png");
+  background-image: radial-gradient($white, rgba(255, 255, 255, 0.8),  rgba(255, 255, 255, 0.2)), url("/assets/banner-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 30% 90%;
@@ -60,18 +61,11 @@
 .suggested {
   width: 100%;
   padding: 2rem 0;
-  position: relative;
-  border-bottom: 1px solid $light-gray;
-  &:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    box-shadow: inset 0px 1px 0px 0px $light-gray;
-  }
   &__header {
     text-align: center;
+    position: relative;
+    padding: 0 0 1.5rem 0;
+    @include divider('bot', 2px);
   }
 }
 
